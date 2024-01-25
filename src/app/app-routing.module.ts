@@ -11,7 +11,7 @@ import { ProfileAdminComponent } from './components/profile-admin/profile-admin.
 const routes: Routes = [
   
   { path: 'login', component: LoginComponent, canActivate: [GuestGuard] },
-  { path: 'dashboard-admin', component: DashboardAdminComponent, canActivate: [AuthAdminGuard]  },
+  { path: 'dashboard-admin', component: DashboardAdminComponent },
   { path: 'contracts', component: ContractsComponent, canActivate: [AuthAdminGuard] },
   { path: 'employees', component: EmployeesComponent, canActivate: [AuthAdminGuard] },
   { path: 'profile-admin', component: ProfileAdminComponent, canActivate: [AuthAdminGuard]  }
