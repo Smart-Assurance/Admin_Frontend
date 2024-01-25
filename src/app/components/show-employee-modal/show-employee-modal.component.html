@@ -1,0 +1,25 @@
+<div class="modal-header bg-primary text-white">
+    <h4 class="modal-title">Employee Details</h4>
+  
+    <button type="button" class="close btn btn-danger-outline text-danger m-1" (click)="activeModal.dismiss()">
+      <i class="ti ti-close"></i>
+    </button>
+  </div>
+  <div class="modal-body my-3">
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <p class="mb-4"><strong>CIN:</strong> {{ employee?.cin }}</p>
+        <p class="mb-4"><strong>Full Name:</strong> {{ employee?.f_name }} {{ employee?.l_name }}</p>
+        <p class="mb-4"><strong>Phone:</strong> {{ employee?.phone }}</p>
+        <p class="mb-4"><strong>Email:</strong> {{ employee?.email }}</p>
+      </div>
+      <div class="col-md-6">
+        <p class="mb-4"><strong>Date of Birth:</strong> {{ employee?.date_of_birth | date:'yyyy-MM-dd' }}</p>
+        <p class="mb-4"><strong>Address:</strong> {{ employee?.address }}</p>
+        <p class="mb-4"><strong>City:</strong> {{ employee?.city }}</p>
+        <p class="mb-4"><strong>@ Wallet:</strong> {{ employee?.add_wallet_assu }}</p>
+      </div>
+    </div>
+  </div>
+  
+  

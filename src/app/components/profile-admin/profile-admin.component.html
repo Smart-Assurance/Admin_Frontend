@@ -1,0 +1,61 @@
+<!-- update-admin-profile.component.html -->
+<div class="page-wrapper" id="main-wrapper" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
+  data-sidebar-position="fixed" data-header-position="fixed">
+  <!-- Sidebar Start -->
+  <!-- Assuming you have a sidebar component -->
+  <app-side-bar-admin></app-side-bar-admin>
+  <!-- Sidebar End -->
+  <!-- Main wrapper -->
+  <div class="body-wrapper">
+    <!-- Header Start -->
+    <!-- Assuming you have a header component -->
+    <app-header></app-header>
+    <!-- Header End -->
+    <div class="container-fluid">
+      <div class="row">
+        <div class="card-body p-4">
+          <div class="d-flex justify-content-between my-2">
+            <h5 class="card-title fw-semibold mb-4">Update admin profile</h5>
+          </div>
+          <!-- Update Admin Profile Form -->
+          <form [formGroup]="updateAdminProfileForm" (ngSubmit)="updateAdminProfile()">
+            <div class="mb-3">
+              <label for="l_name" class="form-label">Last Name</label>
+              <input type="text" class="form-control" id="l_name" formControlName="l_name" />
+            </div>
+            <div class="mb-3">
+              <label for="f_name" class="form-label">First Name</label>
+              <input type="text" class="form-control" id="f_name" formControlName="f_name" />
+            </div>
+            <div class="mb-3">
+              <label for="username" class="form-label">Username</label>
+              <input type="text" class="form-control" id="username" formControlName="username" />
+            </div>
+            <div class="mb-3">
+              <label for="password" class="form-label">Password</label>
+              <input type="password" class="form-control" id="password" formControlName="password" />
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" class="form-control" id="email" formControlName="email" />
+            </div>
+            <div class="mb-3">
+              <label for="phone" class="form-label">Phone</label>
+              <input type="tel" class="form-control" id="phone" formControlName="phone" />
+            </div>
+            <div class="mb-3">
+              <label for="city" class="form-label">City</label>
+              <input type="text" class="form-control" id="city" formControlName="city" />
+            </div>
+            <div class="mb-3">
+              <label for="address" class="form-label">Address</label>
+              <input type="text" class="form-control" id="address" formControlName="address" />
+            </div>
+            <button type="submit" class="btn btn-primary">Update Profile</button>
+          </form>
+          <!-- End of Update Admin Profile Form -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

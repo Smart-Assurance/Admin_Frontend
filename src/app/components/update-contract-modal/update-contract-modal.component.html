@@ -1,0 +1,43 @@
+<!-- modal.component.html -->
+<div class="modal-header bg-success text-white">
+    <h4 class="modal-title">Update Contract</h4>
+  
+    <button type="button" class="close btn btn-danger-outline text-white m-1" (click)="activeModal.dismiss()">
+      <i class="ti ti-close"></i>
+    </button>
+  </div>
+  <div class="modal-body">
+  
+      <!-- Example form inputs -->
+      <form [formGroup]="updateContractForm" (ngSubmit)="updateContract()">
+        <div class="row mb-3">
+            <div class="col-md-6">
+              <label for="name"  class="form-label">Contract Name</label>
+              <input type="text"class="form-control"  placeholder="Contract Name" id="name" name="name" formControlName="name" [(ngModel)]="contract.name"/>
+            </div>
+            <div class="col-md-6">
+              <label for="price"  class="form-label">Contract Price</label>
+              <input type="number"class="form-control"  placeholder="Contract Price" id="price" name="price" formControlName="price" [(ngModel)]="contract.price"/>
+            </div>
+          </div>
+    
+          <div class="row mb-3">
+            <div class="col-md-12">
+                <label for="options" class="form-label">Contract Options</label>
+                <!-- Use ngModel to bind the value to the model and (ngModelChange) to handle changes -->
+                <input type="text" class="form-control" placeholder="Contract Options" id="options" name="options"
+                       formControlName="options" [ngModel]="contract.options.join(',')" (ngModelChange)="updateOptions($event)" />
+            </div>
+        </div>
+    
+          <div class="row mb-3">
+            <div class="col-md-12">
+              <label for="description"  class="form-label">Contract Description</label>
+              <input type="text" class="form-control" placeholder="Contract Description" id="description" name="description" formControlName="description" [(ngModel)]="contract.description" />
+            </div>
+          </div>
+    
+          <button type="submit"class="btn btn-success"  style="width: 100%; margin-top: 20px">Save</button>
+      </form>
+  </div>
+  

@@ -1,0 +1,41 @@
+<div class="modal-overlay" [@openClose]="showModal ? 'open' : 'close'">
+    <div class="modal-content">
+      <div class="modal-close" [@openClose]="showModal ? 'open' : 'close'" (click)="toggle()">
+        <span>&times;</span>
+      </div>
+  
+      <h2 class="m-0 my-4">
+        Add New Contract
+      </h2>
+  
+      <form [formGroup]="addContractForm" (ngSubmit)="addContract()">
+        <div class="row mb-3">
+          <div class="col-md-6">
+            <label for="name">Contract Name</label>
+            <input type="text" placeholder="Contract Name" id="name" name="name" formControlName="name" />
+          </div>
+          <div class="col-md-6">
+            <label for="price">Contract Price</label>
+            <input type="number" placeholder="Contract Price" id="price" name="price" formControlName="price" />
+          </div>
+        </div>
+  
+        <div class="row mb-3">
+          <div class="col-md-12">
+            <label for="options">Contract Options</label>
+            <input type="text" placeholder="Contract Options" id="options" name="options" formControlName="options" />
+          </div>
+        </div>
+  
+        <div class="row mb-3">
+          <div class="col-md-12">
+            <label for="description">Contract Description</label>
+            <input type="text" placeholder="Contract Description" id="description" name="description" formControlName="description" />
+          </div>
+        </div>
+  
+        <button type="submit" style="width: 100%; margin-top: 20px">Add Contract</button>
+      </form>
+    </div>
+  </div>
+  
