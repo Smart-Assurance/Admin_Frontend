@@ -1,0 +1,74 @@
+<!-- modal.component.html -->
+
+<div class="modal-overlay" [@openClose]="showModal ? 'open' : 'close'">
+  <div class="modal-content">
+    <div class="modal-close" [@openClose]="showModal ? 'open' : 'close'" (click)="toggle()">
+      <span>&times;</span>
+    </div>
+
+    <h2 class="m-0 my-4">
+      Add New Client
+    </h2>
+
+    <!-- Example form inputs -->
+    <form [formGroup]="addClientForm" (ngSubmit)="addClient()">
+      <div class="row mb-3">
+        <div class="col-md-6">
+          <label for="l_name">Last Name</label>
+          <input type="text" placeholder="Last Name" id="l_name" name="l_name" formControlName="l_name" />
+        </div>
+        <div class="col-md-6">
+          <label for="f_name">First Name</label>
+          <input type="text" placeholder="First Name" id="f_name" name="f_name" formControlName="f_name" />
+        </div>
+      </div>
+
+      <div class="row mb-3">
+        <div class="col-md-6">
+          <label for="email">Email</label>
+          <input type="email" placeholder="Email" id="email" name="email" formControlName="email" />
+        </div>
+        <div class="col-md-6">
+          <label for="phone">Phone</label>
+          <input type="text" placeholder="Phone" id="phone" name="phone" formControlName="phone" />
+        </div>
+      </div>
+
+      
+      <div class="row mb-3">
+        <div class="col-md-6">
+          <label for="cin">CIN</label>
+          <input type="text" placeholder="CIN" id="cin" name="cin" formControlName="cin" />
+        </div>
+
+        <div class="col-md-6">
+          <label for="phone">Date of birth</label>
+          <input type="date" placeholder="Date of birth" id="date_of_birth" name="date_of_birth" formControlName="date_of_birth" />
+        </div>
+      </div>
+
+      <div class="row mb-3">
+        <div class="col-md-12">
+          <label for="address">Address</label>
+          <input type="text" placeholder="Address" id="address" name="address" formControlName="address" />
+        </div>
+      </div>
+
+      <div class="row mb-3">
+        <div class="col-md-6">
+          <label for="city" class="form-label">City</label>
+          <select id="city" class="form-control" formControlName="city">
+            <option *ngFor="let city of cities" [value]="city">{{ city }}</option>
+          </select>  
+        </div>
+
+        <div class="col-md-6">
+          <label for="add_wallet_cli">@ Wallet</label>
+          <input type="text" placeholder="Wallet Addresse" id="add_wallet_cli" name="add_wallet_cli" formControlName="add_wallet_cli" />
+        </div>
+      </div>
+
+      <button type="submit" style="width: 100%; margin-top: 20px">Add Client</button>
+    </form>
+  </div>
+</div>

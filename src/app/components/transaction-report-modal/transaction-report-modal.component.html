@@ -1,0 +1,34 @@
+<!-- transaction-report-modal.component.html -->
+
+<div class="modal-header bg-success text-white">
+    <h4 class="modal-title">Transaction Report</h4>
+    
+    <button type="button" class="close btn btn-danger-outline text-danger m-1" (click)="activeModal.dismiss()">
+      <i class="ti ti-close"></i>
+    </button>
+  </div>
+  
+  <div class="modal-body my-3">
+    <form>
+      <!-- Input for @ Wallet (Disabled) -->
+      <div class="mb-3">
+        <label for="walletInput" class="form-label">Clients's @ Wallet</label>
+        <div class="input-group">
+            <input type="text" id="walletInput" class="form-control" [(ngModel)]="ownerWallet" name="walletInput" disabled>
+        </div>
+      </div>
+  
+      <!-- Input for Price to Pay -->
+      <div class="mb-3">
+        <label for="priceInput" class="form-label">Price to Pay for Insurance</label>
+        <div class="input-group">
+          <span class="input-group-text">$</span>
+          <input type="number" id="priceInput" class="form-control" [(ngModel)]="insurancePrice">
+        </div>
+      </div>
+  
+      <!-- Button for Making Transaction -->
+      <button type="button" class="btn btn-success" (click)="makeTransaction()">Make Transaction</button>
+    </form>
+  </div>
+  

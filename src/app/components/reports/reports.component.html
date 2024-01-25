@@ -1,0 +1,85 @@
+
+<div class="page-wrapper" id="main-wrapper" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
+data-sidebar-position="fixed" data-header-position="fixed">
+<!-- Sidebar Start -->
+<app-side-bar></app-side-bar>
+<!--  Sidebar End -->
+<!--  Main wrapper -->
+<div class="body-wrapper">
+  <!--  Header Start -->
+<app-header></app-header>
+  <!--  Header End -->
+  <div class="container-fluid">
+    <div class="card w-100">
+        <div class="card-body p-4">
+          <div class="d-flex justify-content-between my-2">
+            <h5 class="card-title fw-semibold mb-4">Reports</h5>
+          </div>
+          <!-- <app-add-examinater-modal
+          [showModal]="isModalOpen"
+          (toggleModal)="toggleModal()"
+        ></app-add-examinater-modal> -->
+
+          <div class="table-responsive">
+            <table class="table text-nowrap mb-0 align-middle text-center">
+              <thead class="text-dark fs-4">
+                <tr>
+                  <th class="border-bottom-0">
+                    <h6 class="fw-semibold mb-0">Ref</h6>
+                  </th>
+                
+                  <th class="border-bottom-0">
+                    <h6 class="fw-semibold mb-0">Examinater</h6>
+                  </th>
+                  <th class="border-bottom-0">
+                    <h6 class="fw-semibold mb-0">Matricule</h6>
+                  </th>
+                  <th class="border-bottom-0">
+                    <h6 class="fw-semibold mb-0">Type contrat</h6>
+                  </th>
+                  <th class="border-bottom-0">
+                    <h6 class="fw-semibold mb-0">Status</h6>
+                  </th>
+                  <th class="border-bottom-">
+                    <h6 class="fw-semibold mb-0">Actions</h6>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let report of reports">
+                    <td class="border-bottom-0"><h6 class="fw-semibold mb-0">{{ report.id }}</h6></td>
+                    <td class="border-bottom-0">
+                      <p class="mb-0 fw-normal">{{ report.examinater.f_name+" "+report.examinater.l_name }}</p>
+                    </td>
+                    <td class="border-bottom-0">
+                        <p class="mb-0 fw-normal">{{ report.vehicule.matricule }}</p>
+                      </td>
+                  
+                    <td class="border-bottom-0">
+                        <p class="mb-0 fw-normal">{{ report.vehicule.contract.name }}</p>
+                    </td>
+                    <td class="border-bottom-0">
+                        <div class="d-flex align-items-center text-center gap-2">
+                          <ng-container *ngIf="report.status === 'seen'; else notRegled">
+                            <span class="badge bg-primary rounded-3 fw-semibold">Réglé</span>
+                          </ng-container>
+                          <ng-template #notRegled>
+                            <span class="badge bg-warning rounded-3 fw-semibold">Non réglé</span>
+                          </ng-template>
+                        </div>
+                      </td>
+                      <td class="border-bottom-0">
+                        <button type="button" (click)="openReportDetailModal(report)" class="btn btn-primary m-1"><i class="ti ti-eye"></i></button>
+                        <button type="button" (click)="openReportTransactionModal(report.vehicule.owner.add_wallet_cli, report.id)" class="btn btn-success m-1" [disabled]="report.status === 'seen'">
+                            <i class="ti ti-report-money"></i>
+                          </button>
+                                                </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
+</div>
