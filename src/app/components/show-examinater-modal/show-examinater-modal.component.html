@@ -1,0 +1,24 @@
+<div class="modal-header bg-primary text-white">
+    <h4 class="modal-title">Examinater Details</h4>
+  
+    <button type="button" class="close btn btn-danger-outline text-danger m-1" (click)="activeModal.dismiss()">
+      <i class="ti ti-close"></i>
+    </button>
+  </div>
+  <div class="modal-body my-3">
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <p class="mb-4"><strong>CIN:</strong> {{ examinater?.cin }}</p>
+        <p class="mb-4"><strong>Full Name:</strong> {{ examinater?.f_name }} {{ examinater?.l_name }}</p>
+        <p class="mb-4"><strong>Phone:</strong> {{ examinater?.phone }}</p>
+        <p class="mb-4"><strong>Email:</strong> {{ examinater?.email }}</p>
+      </div>
+      <div class="col-md-6">
+        <p class="mb-4"><strong>Date of Birth:</strong> {{ examinater?.date_of_birth | date:'yyyy-MM-dd' }}</p>
+        <p class="mb-4"><strong>Address:</strong> {{ examinater?.address }}</p>
+        <p class="mb-4"><strong>City:</strong> {{ examinater?.city }}</p>
+      </div>
+    </div>
+  </div>
+  
+  

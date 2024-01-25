@@ -1,0 +1,103 @@
+
+<div class="modal-header" style="background: linear-gradient(to right, #007bff, #06c1f7); color: white;">
+    <h4 class="modal-title">Vehicle Inspection Report</h4>
+    <button type="button" class="close btn btn-danger-outline" aria-label="Close" (click)="activeModal.dismiss()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body my-3">
+    <!-- Report Information Card -->
+    <div class="card mb-3">
+      <div class="card-header bg-white text-white">
+        <h5 class="card-title">Report Information</h5>
+      </div>
+      <div class="card-body">
+        <div class="row mb-3">
+          <!-- Report Information -->
+          <div class="col-md-6">
+            <p class="mb-2"><strong>Title:</strong> {{ report.title }}</p>
+            <p class="mb-2"><strong>Description:</strong> {{ report.description }}</p>
+            <p class="mb-2"><strong>Status:</strong> {{ report.status === 'seen' ? 'Réglé' : 'Non Réglé' }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card mb-3">
+      <div class="card-header bg-white text-white">
+        <h5 class="card-title">Vehicle Information</h5>
+      </div>
+      <div class="card-body">
+        <div class="row mb-3">
+          <!-- Vehicle Information -->
+          <div class="col-md-6">
+            <p class="mb-2"><strong>Matricule:</strong> {{ report.vehicule.matricule }}</p>
+            <p class="mb-2"><strong>Type:</strong> {{ report.vehicule.type }}</p>
+            <p class="mb-2"><strong>Model:</strong> {{ report.vehicule.model }}</p>
+            <p class="mb-2"><strong>Price:</strong> {{ report.vehicule.price | currency:'USD':'symbol':'1.2-2' }}</p>
+          </div>
+          <div class="col-md-6">
+            <p class="mb-2"><strong>Grey Card Number:</strong> {{ report.vehicule.grey_card_number }}</p>
+            <p class="mb-2"><strong>Owner:</strong> {{ report.vehicule.owner.f_name }} {{ report.vehicule.owner.l_name }}</p>
+            <p class="mb-2"><strong>Owner's Phone:</strong> {{ report.vehicule.owner.phone }}</p>
+            <p class="mb-2"><strong>City:</strong> {{ report.vehicule.owner.city }}</p>
+          </div>
+        </div>
+        <div class="row mb-3">
+          <div class="col-md-12">
+            <p class="mb-2"><strong>Contract Name:</strong> {{ report.vehicule.contract.name }}</p>
+            <p class="mb-2"><strong>Contract Price:</strong> {{ report.vehicule.contract.price | currency:'USD':'symbol':'1.2-2' }}</p>
+            <p class="mb-2"><strong>Contract Options:</strong></p>
+            <ul>
+              <li *ngFor="let option of report.vehicule.contract.options">{{ option }}</li>
+            </ul>
+                        <p class="mb-2"><strong>Contract Description:</strong> {{ report.vehicule.contract.description }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="card mb-3">
+      <div class="card-header bg-white text-white">
+        <h5 class="card-title">Owner Information</h5>
+      </div>
+      <div class="card-body">
+        <div class="row mb-3">
+          <!-- Owner Information -->
+          <div class="col-md-6">
+            <p class="mb-2"><strong>Name:</strong> {{ report.vehicule.owner.f_name }} {{ report.vehicule.owner.l_name }}</p>
+            <p class="mb-2"><strong>Email:</strong> {{ report.vehicule.owner.email }}</p>
+            <p class="mb-2"><strong>Phone:</strong> {{ report.vehicule.owner.phone }}</p>
+            <p class="mb-2"><strong>City:</strong> {{ report.vehicule.owner.city }}</p>
+          </div>
+          <div class="col-md-6">
+            <p class="mb-2"><strong>CIN:</strong> {{ report.vehicule.owner.cin }}</p>
+            <p class="mb-2"><strong>Date of Birth:</strong> {{ report.vehicule.owner.date_of_birth | date:'yyyy-MM-dd' }}</p>
+            <p class="mb-2"><strong>Address:</strong> {{ report.vehicule.owner.address }}</p>
+            <p class="mb-2"><strong>Wallet:</strong> {{ report.vehicule.owner.add_wallet_cli }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="card">
+      <div class="card-header  bg-white text-white">
+        <h5 class="card-title">Examiner Information</h5>
+      </div>
+      <div class="card-body">
+        <div class="row mb-3">
+          <!-- Examiner Information -->
+          <div class="col-md-6">
+            <p class="mb-2"><strong>Name:</strong> {{ report.examinater.f_name }} {{ report.examinater.l_name }}</p>
+            <p class="mb-2"><strong>Email:</strong> {{ report.examinater.email }}</p>
+            <p class="mb-2"><strong>Phone:</strong> {{ report.examinater.phone }}</p>
+            <p class="mb-2"><strong>City:</strong> {{ report.examinater.city }}</p>
+          </div>
+          <div class="col-md-6">
+            <p class="mb-2"><strong>CIN:</strong> {{ report.examinater.cin }}</p>
+            <p class="mb-2"><strong>Date of Birth:</strong> {{ report.examinater.date_of_birth | date:'yyyy-MM-dd' }}</p>
+            <p class="mb-2"><strong>Address:</strong> {{ report.examinater.address }}</p>
+          </div>
+        </div>
+      </div>
+  </div>
+  

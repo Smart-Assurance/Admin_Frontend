@@ -1,0 +1,68 @@
+<!-- modal.component.html -->
+<div class="modal-header bg-success text-white">
+    <h4 class="modal-title">Update Examinater</h4>
+  
+    <button type="button" class="close btn btn-danger-outline text-white m-1" (click)="activeModal.dismiss()">
+      <i class="ti ti-close"></i>
+    </button>
+  </div>
+  <div class="modal-body">
+  
+      <!-- Example form inputs -->
+      <form [formGroup]="updateExaminaterForm" (ngSubmit)="updateExaminater()">
+        <div class="row mb-3">
+          <div class="col-md-6">
+            <label for="l_name" class="form-label">Last Name</label>
+            <input type="text"  class="form-control"  placeholder="Last Name" id="l_name" name="l_name" formControlName="l_name" [(ngModel)]="examinater.l_name"  />
+          </div>
+          <div class="col-md-6">
+            <label for="f_name" class="form-label">First Name</label>
+            <input type="text"  class="form-control"  placeholder="First Name" id="f_name" name="f_name" formControlName="f_name" [(ngModel)]="examinater.f_name"  />
+          </div>
+        </div>
+  
+        <div class="row mb-3">
+          <div class="col-md-6">
+            <label for="email" class="form-label">Email</label>
+            <input type="email"  class="form-control"  placeholder="Email" id="email" name="email" formControlName="email" [(ngModel)]="examinater.email" />
+          </div>
+
+        </div>
+  
+        
+        <div class="row mb-3">
+          <div class="col-md-6">
+            <label for="cin" class="form-label">CIN</label>
+            <input type="text" class="form-control"  placeholder="CIN" id="cin" name="cin" formControlName="cin" [(ngModel)]="examinater.cin"/>
+          </div>
+  
+          <div class="col-md-6">
+            <label for="phone" class="form-label">Date of birth</label>
+            <input type="date" placeholder="Date of birth"  class="form-control"  id="date_of_birth" name="date_of_birth" formControlName="date_of_birth" [(ngModel)]="examinater.date_of_birth" />
+          </div>
+        </div>
+  
+        <div class="row mb-3">
+          <div class="col-md-12">
+            <label for="address" class="form-label">Address</label>
+            <input type="text"  class="form-control" placeholder="Address" id="address" name="address" formControlName="address"  [(ngModel)]="examinater.address"  />
+          </div>
+        </div>
+  
+        <div class="row mb-3">
+            <div class="col-md-6">
+              <label for="city" class="form-label">City</label>
+              <select id="city" class="form-control" formControlName="city" [(ngModel)]="examinater.city">
+                <option *ngFor="let city of cities" [value]="city">{{ city }}</option>
+              </select>  
+            </div>
+            <div class="col-md-6">
+                <label for="phone" class="form-label">Phone</label>
+                <input type="text"  class="form-control"  placeholder="Phone" id="phone" name="phone" formControlName="phone" [(ngModel)]="examinater.phone" />
+              </div>
+        </div>
+  
+        <button type="submit" class="btn btn-success"  style="width: 100%; margin-top: 20px">Save</button>
+      </form>
+  </div>
+  
