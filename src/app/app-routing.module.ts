@@ -12,6 +12,8 @@ import { AuthEmployeeGuard } from './helpers/auth-employee.guard';
 import { ContractsComponent } from './components/contracts/contracts.component';
 import { EmployeesComponent } from './components/employees/employees.component';
 import { ProfileAdminComponent } from './components/profile-admin/profile-admin.component';
+import { AuthExaminaterGuard } from './helpers/auth-examinater.guard';
+import { AddReportComponent } from './components/add-report/add-report.component';
 
 const routes: Routes = [
   
@@ -23,7 +25,8 @@ const routes: Routes = [
   { path: 'dashboard-admin', component: DashboardAdminComponent, canActivate: [AuthAdminGuard]  },
   { path: 'contracts', component: ContractsComponent, canActivate: [AuthAdminGuard] },
   { path: 'employees', component: EmployeesComponent, canActivate: [AuthAdminGuard] },
-  { path: 'profile-admin', component: ProfileAdminComponent, canActivate: [AuthAdminGuard]  }
+  { path: 'profile-admin', component: ProfileAdminComponent, canActivate: [AuthAdminGuard]  },
+  { path: 'dashboard-examinater', component: AddReportComponent, canActivate: [AuthExaminaterGuard]  },
 
 ];
 

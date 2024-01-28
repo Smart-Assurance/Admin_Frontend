@@ -33,7 +33,8 @@ import { AddContractModalComponent } from './components/add-contract-modal/add-c
 import { UpdateContractModalComponent } from './components/update-contract-modal/update-contract-modal.component';
 import { AddEmployeeModalComponent } from './components/add-employee-modal/add-employee-modal.component';
 import { ShowEmployeeModalComponent } from './components/show-employee-modal/show-employee-modal.component';
-import { UpdateEmployeeModalComponent } from './components/update-employee-modal/update-employee-modal.component'; // Import BrowserAnimationsModule
+import { UpdateEmployeeModalComponent } from './components/update-employee-modal/update-employee-modal.component';
+import { AddReportComponent } from './components/add-report/add-report.component'; // Import BrowserAnimationsModule
 
 @NgModule({
   declarations: [
@@ -63,7 +64,8 @@ import { UpdateEmployeeModalComponent } from './components/update-employee-modal
     UpdateContractModalComponent,
     AddEmployeeModalComponent,
     ShowEmployeeModalComponent,
-    UpdateEmployeeModalComponent
+    UpdateEmployeeModalComponent,
+    AddReportComponent
     ],
   imports: [
     BrowserModule,
