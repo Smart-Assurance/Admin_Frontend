@@ -14,4 +14,7 @@ export class ReportManagement {
   public updateStatus(reportId: string): Observable<any> {
     return this.http.get<any>(environment.apiUrlReport + '/reports/'+reportId);
   }
+  public addReport(reportInfo: any): Observable<any> {
+    return this.http.get<any>(environment.apiUrlReport + '/reports/add');
+  }
 }

@@ -39,4 +39,16 @@ export class ReportService {
       }
     });
   }
+
+  public addReport(reportInfo: any): void {
+    this.reportManagement.addReport(reportInfo).subscribe({
+      next: () => {
+        alert("Report added successfully");
+        this.getAll();
+      },
+      error: (error) => {
+        console.error("Error during insert :", error);
+      }
+    });
+  }
 }

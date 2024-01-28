@@ -23,9 +23,10 @@ export class GuestGuard implements CanActivate {
     if (this.authService.isLoggedIn()) {
       if(this.authService.getRole()==="ROLE_ADMIN")
         this.router.navigate(['dashboard-admin']);
-      else
+      else if(this.authService.getRole()==="ROLE_EXAMINATER")
+        this.router.navigate(['dashboard-examinater']);
+      else 
       this.router.navigate(['/dashboard-employee']);
-
     }
 
     return true;

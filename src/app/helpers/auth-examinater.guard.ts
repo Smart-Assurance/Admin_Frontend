@@ -10,7 +10,7 @@ import {
 @Injectable({
   providedIn: 'root',
 })
-export class AuthEmployeeGuard implements CanActivate {
+export class AuthExaminaterGuard implements CanActivate {
   constructor(
     private authService: AuthenticationService,
     private router: Router
@@ -24,9 +24,10 @@ export class AuthEmployeeGuard implements CanActivate {
       this.router.navigate(['/login']);
     }else if(this.authService.getRole()==="ROLE_ADMIN"){
       this.router.navigate(['/dashboard-admin']);
-    }else if(this.authService.getRole()==="ROLE_EXAMINATER"){
-      this.router.navigate(['/dashboard-examinater']);
+    }else if (this.authService.getRole()==="ROLE_EMPLOYEE"){
+      this.router.navigate(['/dashboard-employee']);
     }
+
     return true;
   }
 }

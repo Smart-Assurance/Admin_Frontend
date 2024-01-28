@@ -28,6 +28,11 @@ export class AuthenticationService {
           localStorage.setItem("role", response.role);
   
           this.router.navigate(['dashboard-admin']);
+        }else if(response.role === 'ROLE_EXAMINATER'){
+          localStorage.setItem("token", response.token);
+          localStorage.setItem("role", response.role);
+  
+          this.router.navigate(['dashboard-examinater']);
         }else{
           alert("Login Failed")
         }
